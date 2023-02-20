@@ -24,6 +24,9 @@ group :development, :test do
   gem 'pry'
   gem 'launchy'
   gem 'simplecov', require: false, group: :test
+  gem 'orderly'
+  gem 'net-http'
+  
 end
 
 group :development do
