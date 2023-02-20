@@ -18,5 +18,11 @@ RSpec.describe Snack, type: :model do
       Snack.create!(name: "Cosmo", price: 8.00)
       expect(Snack.average_price.round(2)).to eq(6.94)
     end
+
+    it '#count_snacks' do
+      expect(Snack.count_snacks).to eq(3)
+      Snack.create!(name: "Cosmo", price: 8.00)
+      expect(Snack.count).to eq(4)
+    end
   end
 end

@@ -5,4 +5,8 @@ class Snack < ApplicationRecord
   def self.average_price
     average(:price)
   end
+
+  def self.count_snacks
+    count(:id)
+  end
 end
