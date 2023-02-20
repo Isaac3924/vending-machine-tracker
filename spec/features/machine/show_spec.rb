@@ -13,10 +13,9 @@ RSpec.describe 'When a Uswer visits a machine show page', type: :feature do
     @ice = @snod.snacks.create!(name: "Smirnoff Ice", price: 1.50)
     @natty = @snod.snacks.create!(name: "Natural Ice", price: 2.50)
 
-    
-
     visit machine_path(@dons)
   end
+  
   scenario 'they see the location of that machine' do
     expect(page).to have_content("Don's Mixed Drinks Vending Machine")
   end
@@ -27,5 +26,9 @@ RSpec.describe 'When a Uswer visits a machine show page', type: :feature do
     expect(page).to have_content("Negroni: $8.25")
     expect(page).to_not have_content("Smirnoff Ice: $1.50")
     expect(page).to_not have_content("Natural Ice: $2.50")
+  end
+
+  scenario 'can see average price of all snacks in the machine' do
+    expect(page).to have_content("Average Price: $6.58")
   end
 end
